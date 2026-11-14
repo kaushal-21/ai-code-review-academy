@@ -105,7 +105,7 @@ app.get("/api/projects/:id", requireInternalAuth, async (req: Request, res: Resp
       return;
     }
 
-    const project = await Project.findById({
+    const project = await Project.findOne({
         _id: id,
         ownerId: res.locals.userId,
     });
